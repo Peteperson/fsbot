@@ -70,15 +70,15 @@ Partial Class FallenSword
         Me.wbrs.Location = New System.Drawing.Point(0, 113)
         Me.wbrs.MinimumSize = New System.Drawing.Size(20, 20)
         Me.wbrs.Name = "wbrs"
-        Me.wbrs.Size = New System.Drawing.Size(802, 472)
-        Me.wbrs.TabIndex = 1
+        Me.wbrs.Size = New System.Drawing.Size(836, 472)
+        Me.wbrs.TabIndex = 26
         '
         'btnGo
         '
         Me.btnGo.Location = New System.Drawing.Point(61, 18)
         Me.btnGo.Name = "btnGo"
         Me.btnGo.Size = New System.Drawing.Size(77, 34)
-        Me.btnGo.TabIndex = 0
+        Me.btnGo.TabIndex = 14
         Me.btnGo.Text = "Login"
         Me.btnGo.UseVisualStyleBackColor = True
         '
@@ -98,35 +98,35 @@ Partial Class FallenSword
         '
         'btnAttack
         '
-        Me.btnAttack.Location = New System.Drawing.Point(271, 26)
+        Me.btnAttack.Location = New System.Drawing.Point(202, 33)
         Me.btnAttack.Name = "btnAttack"
-        Me.btnAttack.Size = New System.Drawing.Size(62, 25)
-        Me.btnAttack.TabIndex = 2
+        Me.btnAttack.Size = New System.Drawing.Size(62, 21)
+        Me.btnAttack.TabIndex = 16
         Me.btnAttack.Text = "Attack"
         Me.btnAttack.UseVisualStyleBackColor = True
         '
         'btnMove
         '
-        Me.btnMove.Location = New System.Drawing.Point(202, 27)
+        Me.btnMove.Location = New System.Drawing.Point(202, 12)
         Me.btnMove.Name = "btnMove"
-        Me.btnMove.Size = New System.Drawing.Size(63, 24)
-        Me.btnMove.TabIndex = 1
+        Me.btnMove.Size = New System.Drawing.Size(62, 21)
+        Me.btnMove.TabIndex = 15
         Me.btnMove.Text = "Move"
         Me.btnMove.UseVisualStyleBackColor = True
         '
         'btnTimer
         '
-        Me.btnTimer.Location = New System.Drawing.Point(730, 26)
+        Me.btnTimer.Location = New System.Drawing.Point(270, 12)
         Me.btnTimer.Name = "btnTimer"
-        Me.btnTimer.Size = New System.Drawing.Size(94, 31)
-        Me.btnTimer.TabIndex = 10
+        Me.btnTimer.Size = New System.Drawing.Size(62, 40)
+        Me.btnTimer.TabIndex = 17
         Me.btnTimer.Text = "Timer"
         Me.btnTimer.UseVisualStyleBackColor = True
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(819, 95)
+        Me.Label1.Location = New System.Drawing.Point(853, 95)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(52, 13)
         Me.Label1.TabIndex = 10
@@ -135,10 +135,10 @@ Partial Class FallenSword
         'lbPos
         '
         Me.lbPos.FormattingEnabled = True
-        Me.lbPos.Location = New System.Drawing.Point(809, 113)
+        Me.lbPos.Location = New System.Drawing.Point(843, 113)
         Me.lbPos.Name = "lbPos"
         Me.lbPos.Size = New System.Drawing.Size(87, 225)
-        Me.lbPos.TabIndex = 11
+        Me.lbPos.TabIndex = 19
         '
         'Label2
         '
@@ -179,7 +179,7 @@ Partial Class FallenSword
         'lbLostExp
         '
         Me.lbLostExp.FormattingEnabled = True
-        Me.lbLostExp.Location = New System.Drawing.Point(809, 369)
+        Me.lbLostExp.Location = New System.Drawing.Point(843, 369)
         Me.lbLostExp.Name = "lbLostExp"
         Me.lbLostExp.Size = New System.Drawing.Size(87, 134)
         Me.lbLostExp.TabIndex = 20
@@ -187,7 +187,7 @@ Partial Class FallenSword
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(811, 353)
+        Me.Label6.Location = New System.Drawing.Point(845, 353)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(86, 13)
         Me.Label6.TabIndex = 21
@@ -196,10 +196,10 @@ Partial Class FallenSword
         'lbEnemies
         '
         Me.lbEnemies.FormattingEnabled = True
-        Me.lbEnemies.Location = New System.Drawing.Point(809, 529)
+        Me.lbEnemies.Location = New System.Drawing.Point(842, 542)
         Me.lbEnemies.Name = "lbEnemies"
         Me.lbEnemies.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
-        Me.lbEnemies.Size = New System.Drawing.Size(148, 121)
+        Me.lbEnemies.Size = New System.Drawing.Size(115, 108)
         Me.lbEnemies.TabIndex = 23
         '
         'Label8
@@ -233,17 +233,17 @@ Partial Class FallenSword
         '
         Me.ListView1.Location = New System.Drawing.Point(0, 591)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(802, 126)
-        Me.ListView1.TabIndex = 31
+        Me.ListView1.Size = New System.Drawing.Size(836, 126)
+        Me.ListView1.TabIndex = 24
         Me.ListView1.UseCompatibleStateImageBehavior = False
         '
         'btnSaveBuffs
         '
         Me.btnSaveBuffs.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(161, Byte))
-        Me.btnSaveBuffs.Location = New System.Drawing.Point(809, 682)
+        Me.btnSaveBuffs.Location = New System.Drawing.Point(842, 682)
         Me.btnSaveBuffs.Name = "btnSaveBuffs"
-        Me.btnSaveBuffs.Size = New System.Drawing.Size(148, 30)
-        Me.btnSaveBuffs.TabIndex = 32
+        Me.btnSaveBuffs.Size = New System.Drawing.Size(115, 30)
+        Me.btnSaveBuffs.TabIndex = 25
         Me.btnSaveBuffs.Text = "Save Buffs"
         Me.btnSaveBuffs.UseVisualStyleBackColor = True
         '
@@ -261,33 +261,33 @@ Partial Class FallenSword
         Me.Button1.Location = New System.Drawing.Point(15, 18)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(40, 33)
-        Me.Button1.TabIndex = 36
+        Me.Button1.TabIndex = 13
         Me.Button1.Text = "Go"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'txtEnemy
         '
-        Me.txtEnemy.Location = New System.Drawing.Point(809, 656)
+        Me.txtEnemy.Location = New System.Drawing.Point(842, 656)
         Me.txtEnemy.Name = "txtEnemy"
-        Me.txtEnemy.Size = New System.Drawing.Size(87, 20)
-        Me.txtEnemy.TabIndex = 38
+        Me.txtEnemy.Size = New System.Drawing.Size(66, 20)
+        Me.txtEnemy.TabIndex = 22
         '
         'btnAddEnemy
         '
-        Me.btnAddEnemy.Location = New System.Drawing.Point(902, 655)
+        Me.btnAddEnemy.Location = New System.Drawing.Point(914, 655)
         Me.btnAddEnemy.Name = "btnAddEnemy"
-        Me.btnAddEnemy.Size = New System.Drawing.Size(55, 21)
-        Me.btnAddEnemy.TabIndex = 39
+        Me.btnAddEnemy.Size = New System.Drawing.Size(43, 21)
+        Me.btnAddEnemy.TabIndex = 23
         Me.btnAddEnemy.Text = "Add"
         Me.btnAddEnemy.UseVisualStyleBackColor = True
         '
         'btnClrEnemies
         '
-        Me.btnClrEnemies.Location = New System.Drawing.Point(809, 507)
+        Me.btnClrEnemies.Location = New System.Drawing.Point(842, 507)
         Me.btnClrEnemies.Name = "btnClrEnemies"
-        Me.btnClrEnemies.Size = New System.Drawing.Size(148, 21)
-        Me.btnClrEnemies.TabIndex = 40
-        Me.btnClrEnemies.Text = "Enemies (click to clear) :"
+        Me.btnClrEnemies.Size = New System.Drawing.Size(115, 34)
+        Me.btnClrEnemies.TabIndex = 21
+        Me.btnClrEnemies.Text = "Enemies (click to clear):"
         Me.btnClrEnemies.UseVisualStyleBackColor = True
         '
         'Label7
@@ -314,7 +314,7 @@ Partial Class FallenSword
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.Size = New System.Drawing.Size(100, 20)
-        Me.txtPassword.TabIndex = 42
+        Me.txtPassword.TabIndex = 2
         Me.txtPassword.Text = Global.BrowserTest.My.MySettings.Default.Password
         '
         'txtUsername
@@ -322,7 +322,7 @@ Partial Class FallenSword
         Me.txtUsername.Location = New System.Drawing.Point(70, 65)
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.Size = New System.Drawing.Size(100, 20)
-        Me.txtUsername.TabIndex = 41
+        Me.txtUsername.TabIndex = 1
         Me.txtUsername.Text = Global.BrowserTest.My.MySettings.Default.UserName
         '
         'cbAttack
@@ -334,7 +334,7 @@ Partial Class FallenSword
         Me.cbAttack.Location = New System.Drawing.Point(600, 90)
         Me.cbAttack.Name = "cbAttack"
         Me.cbAttack.Size = New System.Drawing.Size(119, 17)
-        Me.cbAttack.TabIndex = 37
+        Me.cbAttack.TabIndex = 8
         Me.cbAttack.Text = "Attack after move ?"
         Me.cbAttack.UseVisualStyleBackColor = True
         '
@@ -344,8 +344,9 @@ Partial Class FallenSword
         Me.txtSteps.Location = New System.Drawing.Point(605, 41)
         Me.txtSteps.Name = "txtSteps"
         Me.txtSteps.Size = New System.Drawing.Size(33, 20)
-        Me.txtSteps.TabIndex = 34
+        Me.txtSteps.TabIndex = 12
         Me.txtSteps.Text = Global.BrowserTest.My.MySettings.Default.Steps
+        Me.txtSteps.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'cbNotify
         '
@@ -355,7 +356,7 @@ Partial Class FallenSword
         Me.cbNotify.Location = New System.Drawing.Point(340, 90)
         Me.cbNotify.Name = "cbNotify"
         Me.cbNotify.Size = New System.Drawing.Size(115, 17)
-        Me.cbNotify.TabIndex = 33
+        Me.cbNotify.TabIndex = 6
         Me.cbNotify.Text = "Notify for Champs?"
         Me.cbNotify.UseVisualStyleBackColor = True
         '
@@ -368,7 +369,7 @@ Partial Class FallenSword
         Me.cbBuff.Location = New System.Drawing.Point(460, 90)
         Me.cbBuff.Name = "cbBuff"
         Me.cbBuff.Size = New System.Drawing.Size(135, 17)
-        Me.cbBuff.TabIndex = 6
+        Me.cbBuff.TabIndex = 7
         Me.cbBuff.Text = "Enable buff after login?"
         Me.cbBuff.UseVisualStyleBackColor = True
         '
@@ -378,7 +379,7 @@ Partial Class FallenSword
         Me.txtStamina.Location = New System.Drawing.Point(438, 15)
         Me.txtStamina.Name = "txtStamina"
         Me.txtStamina.Size = New System.Drawing.Size(33, 20)
-        Me.txtStamina.TabIndex = 7
+        Me.txtStamina.TabIndex = 9
         Me.txtStamina.Text = Global.BrowserTest.My.MySettings.Default.Stamina
         Me.txtStamina.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -414,7 +415,7 @@ Partial Class FallenSword
         Me.txtWaitTime.Location = New System.Drawing.Point(438, 38)
         Me.txtWaitTime.Name = "txtWaitTime"
         Me.txtWaitTime.Size = New System.Drawing.Size(33, 20)
-        Me.txtWaitTime.TabIndex = 8
+        Me.txtWaitTime.TabIndex = 11
         Me.txtWaitTime.Text = Global.BrowserTest.My.MySettings.Default.WaitFor
         Me.txtWaitTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -424,7 +425,7 @@ Partial Class FallenSword
         Me.txtInterval.Location = New System.Drawing.Point(605, 15)
         Me.txtInterval.Name = "txtInterval"
         Me.txtInterval.Size = New System.Drawing.Size(33, 20)
-        Me.txtInterval.TabIndex = 9
+        Me.txtInterval.TabIndex = 10
         Me.txtInterval.Text = Global.BrowserTest.My.MySettings.Default.Interval
         Me.txtInterval.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
