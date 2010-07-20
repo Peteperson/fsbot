@@ -42,8 +42,14 @@ Public Class TextToSpeach
         newStream.Write(byte1, 0, byte1.Length)
         'Debug.WriteLine("The value of 'ContentLength' property after sending the data is " & request.ContentLength)
         newStream.Close()
-
         'request.Headers.Add(Net.HttpRequestHeader.Cookie, wbrs.Document.Cookie)
+
+
+        'Dim prx As System.Net.IWebProxy = CType(request.Proxy, System.Net.IWebProxy)
+        'prx.Credentials = New System.Net.NetworkCredential(txtPrxUsername.Text, txtPrxPassword.Text)
+        'request.Proxy = prx
+
+
         response = request.GetResponse()
         Dim reader As StreamReader = New StreamReader(response.GetResponseStream())
         DocText = reader.ReadToEnd
