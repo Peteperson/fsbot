@@ -1,6 +1,8 @@
 Imports System.Text.RegularExpressions
 Imports System.Text
-Imports System.io
+Imports System.IO
+Imports System.Net
+Imports System.Speech.Synthesis
 
 Public Class TextToSpeach
     Private DocText As String
@@ -19,18 +21,18 @@ Public Class TextToSpeach
         End Try
     End Sub
 
-    Dim Character As AgentObjects.IAgentCtlCharacter
     Private Sub TextToSpeach_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        NavigateTo("http://www.pandorabots.com/pandora/talk?botid=f5d922d97e345aa1")
         NavigateTo("http://www.pandorabots.com/pandora/talk?botid=f5d922d97e345aa1&skin=custom_input")
     End Sub
 
     Private Sub NavigateHoldingHeaders(ByVal url As String, ByVal botcust2 As String, ByVal question As String)
         Dim request As System.Net.HttpWebRequest
         Dim response As System.Net.HttpWebResponse
-        'lblState.Text = "Loading..."
-        'lblState.Refresh()
         request = System.Net.HttpWebRequest.Create(url)
+        Dim myProxy As WebProxy = New WebProxy("e1001isa", 8080)
+        myProxy.Credentials = New NetworkCredential("pargoudelis", txtPrxPassword.Text, "eurobank")
+        request.Credentials = myProxy.Credentials
+        request.Proxy = myProxy
         request.Method = "POST"
 
         Dim postData As String = "botcust2" & ChrW(61) & botcust2 & "&input" & ChrW(61) & question
@@ -40,24 +42,15 @@ Public Class TextToSpeach
         request.ContentLength = byte1.Length
         Dim newStream As Stream = request.GetRequestStream()
         newStream.Write(byte1, 0, byte1.Length)
-        'Debug.WriteLine("The value of 'ContentLength' property after sending the data is " & request.ContentLength)
         newStream.Close()
-        'request.Headers.Add(Net.HttpRequestHeader.Cookie, wbrs.Document.Cookie)
-
-
-        'Dim prx As System.Net.IWebProxy = CType(request.Proxy, System.Net.IWebProxy)
-        'prx.Credentials = New System.Net.NetworkCredential(txtPrxUsername.Text, txtPrxPassword.Text)
-        'request.Proxy = prx
-
 
         response = request.GetResponse()
         Dim reader As StreamReader = New StreamReader(response.GetResponseStream())
         DocText = reader.ReadToEnd
-        'lblState.Text = "Completed"
         response.Close()
         reader.Close()
         Dim tmp = GetAnswer()
-        Character.Speak(tmp)
+        ss.Speak(tmp)
         txtConversation.Text += tmp & vbCrLf
     End Sub
 
@@ -88,14 +81,10 @@ Public Class TextToSpeach
         End If
     End Sub
 
+    Private ss As SpeechSynthesizer = New SpeechSynthesizer()
     Private Sub btnShowAgn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnShowAgn.Click
-        AxAgn.Characters.Load("CharacterID", "C:\WINDOWS\msagent\chars\merlin.acs")
-        Character = AxAgn.Characters("CharacterID")
-        Character.LanguageID = &H409
-        Character.Show()
-        txtText.Enabled = True
         btnShowAgn.Enabled = False
-        lblInstr.Visible = True
-        Character.Speak("Hallo there !")
+        txtText.Enabled = True
+        ss.Speak("Hello mate")
     End Sub
 End Class
