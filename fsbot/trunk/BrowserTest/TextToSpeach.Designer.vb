@@ -29,6 +29,10 @@ Partial Class TextToSpeach
         Me.AxAgn = New AxAgentObjects.AxAgent
         Me.btnShowAgn = New System.Windows.Forms.Button
         Me.lblInstr = New System.Windows.Forms.Label
+        Me.Label1 = New System.Windows.Forms.Label
+        Me.txtPrxUsername = New System.Windows.Forms.TextBox
+        Me.txtPrxPassword = New System.Windows.Forms.TextBox
+        Me.Label2 = New System.Windows.Forms.Label
         CType(Me.AxAgn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -85,11 +89,52 @@ Partial Class TextToSpeach
         Me.lblInstr.Text = "Talk to me by putting text in the textbox below and then press enter:"
         Me.lblInstr.Visible = False
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(21, 263)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(82, 13)
+        Me.Label1.TabIndex = 8
+        Me.Label1.Text = "Proxy username"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'txtPrxUsername
+        '
+        Me.txtPrxUsername.Location = New System.Drawing.Point(114, 261)
+        Me.txtPrxUsername.Name = "txtPrxUsername"
+        Me.txtPrxUsername.Size = New System.Drawing.Size(105, 20)
+        Me.txtPrxUsername.TabIndex = 9
+        Me.txtPrxUsername.Text = "eurobank\pargoudelis"
+        '
+        'txtPrxPassword
+        '
+        Me.txtPrxPassword.Location = New System.Drawing.Point(332, 261)
+        Me.txtPrxPassword.Name = "txtPrxPassword"
+        Me.txtPrxPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtPrxPassword.Size = New System.Drawing.Size(105, 20)
+        Me.txtPrxPassword.TabIndex = 11
+        Me.txtPrxPassword.Text = "Petexp4bul"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(239, 263)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(81, 13)
+        Me.Label2.TabIndex = 10
+        Me.Label2.Text = "Proxy password"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'TextToSpeach
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(465, 282)
+        Me.Controls.Add(Me.txtPrxPassword)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.txtPrxUsername)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lblInstr)
         Me.Controls.Add(Me.btnShowAgn)
         Me.Controls.Add(Me.AxAgn)
@@ -109,4 +154,8 @@ Partial Class TextToSpeach
     Friend WithEvents AxAgn As AxAgentObjects.AxAgent
     Friend WithEvents btnShowAgn As System.Windows.Forms.Button
     Friend WithEvents lblInstr As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents txtPrxUsername As System.Windows.Forms.TextBox
+    Friend WithEvents txtPrxPassword As System.Windows.Forms.TextBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
 End Class
