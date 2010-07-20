@@ -22,18 +22,15 @@ Partial Class TextToSpeach
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TextToSpeach))
         Me.wbrs = New System.Windows.Forms.WebBrowser
         Me.txtText = New System.Windows.Forms.TextBox
         Me.txtConversation = New System.Windows.Forms.RichTextBox
-        Me.AxAgn = New AxAgentObjects.AxAgent
         Me.btnShowAgn = New System.Windows.Forms.Button
         Me.lblInstr = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
         Me.txtPrxUsername = New System.Windows.Forms.TextBox
         Me.txtPrxPassword = New System.Windows.Forms.TextBox
         Me.Label2 = New System.Windows.Forms.Label
-        CType(Me.AxAgn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'wbrs
@@ -60,15 +57,6 @@ Partial Class TextToSpeach
         Me.txtConversation.Size = New System.Drawing.Size(416, 160)
         Me.txtConversation.TabIndex = 4
         Me.txtConversation.Text = ""
-        '
-        'AxAgn
-        '
-        Me.AxAgn.Enabled = True
-        Me.AxAgn.Location = New System.Drawing.Point(411, 13)
-        Me.AxAgn.Name = "AxAgn"
-        Me.AxAgn.OcxState = CType(resources.GetObject("AxAgn.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AxAgn.Size = New System.Drawing.Size(32, 32)
-        Me.AxAgn.TabIndex = 5
         '
         'btnShowAgn
         '
@@ -114,7 +102,7 @@ Partial Class TextToSpeach
         Me.txtPrxPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPrxPassword.Size = New System.Drawing.Size(105, 20)
         Me.txtPrxPassword.TabIndex = 11
-        Me.txtPrxPassword.Text = "Petexp4bul"
+        Me.txtPrxPassword.Text = "Petexp5bul"
         '
         'Label2
         '
@@ -137,13 +125,11 @@ Partial Class TextToSpeach
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lblInstr)
         Me.Controls.Add(Me.btnShowAgn)
-        Me.Controls.Add(Me.AxAgn)
         Me.Controls.Add(Me.txtConversation)
         Me.Controls.Add(Me.txtText)
         Me.Controls.Add(Me.wbrs)
         Me.Name = "TextToSpeach"
         Me.Text = "TextToSpeach"
-        CType(Me.AxAgn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -151,7 +137,6 @@ Partial Class TextToSpeach
     Friend WithEvents wbrs As System.Windows.Forms.WebBrowser
     Friend WithEvents txtText As System.Windows.Forms.TextBox
     Friend WithEvents txtConversation As System.Windows.Forms.RichTextBox
-    Friend WithEvents AxAgn As AxAgentObjects.AxAgent
     Friend WithEvents btnShowAgn As System.Windows.Forms.Button
     Friend WithEvents lblInstr As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
