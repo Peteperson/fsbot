@@ -1,6 +1,7 @@
 Imports System.Text.RegularExpressions
 Imports System.Net
 Imports System.IO
+Imports System.Speech.Synthesis
 
 Public Class FallenSword
     Private rnd As New Random
@@ -15,6 +16,7 @@ Public Class FallenSword
     Private Progress As Decimal
     Private heads As System.Net.WebHeaderCollection
     Private moves As Int16 = 0
+    Private ss As SpeechSynthesizer = New SpeechSynthesizer()
 
     Private Sub Play()
         _Experience = -1
@@ -189,6 +191,7 @@ Public Class FallenSword
             End Try
         Next
         If (moves Mod CInt(txtSteps.Text)) = 0 Then
+            ss.SpeakAsync(Progress)
             Me.Text = "Repairing..."
             NavigateHoldingHeaders("http://www.fallensword.com/index.php?cmd=blacksmith&subcmd=repairall&fromworld=1", False)
         End If
