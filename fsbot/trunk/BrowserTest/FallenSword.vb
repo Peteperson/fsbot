@@ -40,7 +40,7 @@ Public Class FallenSword
     Private Sub EnableBuffs()
         Dim item As ListViewItem
 
-        For Each item In ListView1.Items
+        For Each item In lvBuffs.Items
             If item.Checked Then NavigateHoldingHeaders(item.SubItems(2).Text, False)
         Next
     End Sub
@@ -167,19 +167,22 @@ Public Class FallenSword
                     sName = mtcs1(i).Value.Replace(Chr(34), "")
                     sName = sName.Substring(sName.IndexOf("90% align=left>") + 15).Replace("</td>", "").Replace("</TD>", "")
                 End If
-                If lbEnemies.FindStringExact(sName) = -1 Then
-                    lbEnemies.Items.Add(sName)
+                If lvEnemies.FindItemWithText(sName) Is Nothing Then
+                    Dim subitems() As String = {sName, 0}
+                    lvEnemies.Items.Add(New ListViewItem(subitems))
                 End If
 
                 If Not CheckForChamp(sName, cbChamp.Checked) Then
-                    If lbEnemies.SelectedItems.Count = 0 Then
+                    If lvEnemies.CheckedItems.Count = 0 Then
                         WriteStats(sName)
                         UpdateExp(NavigateHoldingHeaders("http://www.fallensword.com/index.php?" & mtcs2(i).Value.Replace(Chr(34), ""), False))
+                        IncrementKills(sName, IIf(PrevExperience < Experience, 1, -1))
                     Else
-                        For j As Int16 = 0 To lbEnemies.SelectedItems.Count - 1
-                            If lbEnemies.SelectedItems.Item(j).ToString = sName Then
+                        For j As Int16 = 0 To lvEnemies.CheckedItems.Count - 1
+                            If lvEnemies.CheckedItems.Item(j).Text = sName Then
                                 WriteStats(sName)
                                 UpdateExp(NavigateHoldingHeaders("http://www.fallensword.com/index.php?" & mtcs2(i).Value.Replace(Chr(34), ""), False))
+                                IncrementKills(sName, IIf(PrevExperience < Experience, 1, -1))
                                 Exit For
                             End If
                         Next
@@ -363,22 +366,22 @@ Public Class FallenSword
     Private Sub FallenSword_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         wbrs.ScriptErrorsSuppressed = True
         btnClrEnemies.Text = "Enemies" & vbCrLf & "(click to clear):"
-        ListView1.View = View.Details
-        ListView1.LabelEdit = True
-        ListView1.AllowColumnReorder = True
-        ListView1.CheckBoxes = True
-        ListView1.FullRowSelect = True
-        ListView1.GridLines = True
-        ListView1.Sorting = SortOrder.Ascending
+        lvBuffs.View = View.Details
+        lvBuffs.LabelEdit = True
+        lvBuffs.AllowColumnReorder = True
+        lvBuffs.CheckBoxes = True
+        lvBuffs.FullRowSelect = True
+        lvBuffs.GridLines = True
+        lvBuffs.Sorting = SortOrder.Ascending
 
         Dim sr As StreamReader = New StreamReader("Buffs.txt")
         Dim sLine As String
         Dim item As ListViewItem
         Dim i As Int16 = 0
 
-        ListView1.Columns.Add("Name")
-        ListView1.Columns.Add("Description")
-        ListView1.Columns.Add("Link")
+        lvBuffs.Columns.Add("Name")
+        lvBuffs.Columns.Add("Description")
+        lvBuffs.Columns.Add("Link")
 
         Do While sr.Peek() >= 0
             sLine = sr.ReadLine
@@ -387,10 +390,12 @@ Public Class FallenSword
             item.SubItems.Add(sLine.Split("|")(2))
             item.Checked = (sLine.Split("|")(3) = 1)
             i += 1
-            ListView1.Items.Add(item)
+            lvBuffs.Items.Add(item)
         Loop
-        ListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent)
-        ListView1.Columns(2).Width = 0
+        lvBuffs.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent)
+        lvEnemies.Columns(0).Width = 97
+        lvEnemies.Columns(1).Width = 23
+        lvBuffs.Columns(2).Width = 0
         sr.Close()
     End Sub
 
@@ -400,7 +405,7 @@ Public Class FallenSword
         Dim subitems As String
 
         Dim sw As StreamWriter = New StreamWriter("Buffs.txt", False)
-        For Each item In ListView1.Items
+        For Each item In lvBuffs.Items
             subitems = ""
             For Each subitem In item.SubItems
                 subitems += subitem.Text & "|"
@@ -415,14 +420,17 @@ Public Class FallenSword
     End Sub
 
     Private Sub btnAddEnemy_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAddEnemy.Click
-        If lbEnemies.FindStringExact(txtEnemy.Text) = -1 Then
-            lbEnemies.Items.Add(txtEnemy.Text)
+        If lvEnemies.FindItemWithText(txtEnemy.Text) Is Nothing Then
+            Dim subitems() As String = {txtEnemy.Text, 0}
+            lvEnemies.Items.Add(New ListViewItem(subitems))
+        Else
+            MessageBox.Show("Item already exists")
         End If
         txtEnemy.Text = ""
     End Sub
 
     Private Sub btnClrEnemies_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnClrEnemies.Click
-        lbEnemies.Items.Clear()
+        lvEnemies.Items.Clear()
     End Sub
 
     'Sub ExtendResponse()
@@ -440,4 +448,11 @@ Public Class FallenSword
     'Sub buttonclicked(ByVal sender As Object, ByVal e As HtmlElementEventArgs)
     '    MsgBox("Here I am")
     'End Sub
+
+    Private Sub IncrementKills(ByVal name As String, ByVal IncrValue As Byte)
+        If Not lvEnemies.FindItemWithText(name) Is Nothing Then
+            Dim lvi As ListViewItem = lvEnemies.FindItemWithText(name)
+            lvi.SubItems(1).Text = lvi.SubItems(1).Text + IncrValue
+        End If
+    End Sub
 End Class

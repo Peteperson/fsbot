@@ -22,47 +22,49 @@ Partial Class FallenSword
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container
-        Me.wbrs = New System.Windows.Forms.WebBrowser
-        Me.btnGo = New System.Windows.Forms.Button
-        Me.lblState = New System.Windows.Forms.Label
+        Me.components = New System.ComponentModel.Container()
+        Me.wbrs = New System.Windows.Forms.WebBrowser()
+        Me.btnGo = New System.Windows.Forms.Button()
+        Me.lblState = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.btnAttack = New System.Windows.Forms.Button
-        Me.btnMove = New System.Windows.Forms.Button
-        Me.btnTimer = New System.Windows.Forms.Button
-        Me.Label1 = New System.Windows.Forms.Label
-        Me.lbPos = New System.Windows.Forms.ListBox
-        Me.Label2 = New System.Windows.Forms.Label
-        Me.Label3 = New System.Windows.Forms.Label
-        Me.Label4 = New System.Windows.Forms.Label
-        Me.Label5 = New System.Windows.Forms.Label
-        Me.lbLostExp = New System.Windows.Forms.ListBox
-        Me.Label6 = New System.Windows.Forms.Label
-        Me.lbEnemies = New System.Windows.Forms.ListBox
-        Me.Label8 = New System.Windows.Forms.Label
-        Me.Label9 = New System.Windows.Forms.Label
-        Me.lblProgress = New System.Windows.Forms.Label
-        Me.ListView1 = New System.Windows.Forms.ListView
-        Me.btnSaveBuffs = New System.Windows.Forms.Button
-        Me.Label10 = New System.Windows.Forms.Label
-        Me.Button1 = New System.Windows.Forms.Button
-        Me.txtEnemy = New System.Windows.Forms.TextBox
-        Me.btnAddEnemy = New System.Windows.Forms.Button
-        Me.btnClrEnemies = New System.Windows.Forms.Button
-        Me.Label7 = New System.Windows.Forms.Label
-        Me.Label11 = New System.Windows.Forms.Label
-        Me.txtPassword = New System.Windows.Forms.TextBox
-        Me.txtUsername = New System.Windows.Forms.TextBox
-        Me.cbAttack = New System.Windows.Forms.CheckBox
-        Me.txtSteps = New System.Windows.Forms.TextBox
-        Me.cbNotify = New System.Windows.Forms.CheckBox
-        Me.cbBuff = New System.Windows.Forms.CheckBox
-        Me.txtStamina = New System.Windows.Forms.TextBox
-        Me.cbChamp = New System.Windows.Forms.CheckBox
-        Me.cbExp = New System.Windows.Forms.CheckBox
-        Me.txtWaitTime = New System.Windows.Forms.TextBox
-        Me.txtInterval = New System.Windows.Forms.TextBox
-        Me.cbShowResults = New System.Windows.Forms.CheckBox
+        Me.btnAttack = New System.Windows.Forms.Button()
+        Me.btnMove = New System.Windows.Forms.Button()
+        Me.btnTimer = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lbPos = New System.Windows.Forms.ListBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lbLostExp = New System.Windows.Forms.ListBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.lblProgress = New System.Windows.Forms.Label()
+        Me.lvBuffs = New System.Windows.Forms.ListView()
+        Me.btnSaveBuffs = New System.Windows.Forms.Button()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.txtEnemy = New System.Windows.Forms.TextBox()
+        Me.btnAddEnemy = New System.Windows.Forms.Button()
+        Me.btnClrEnemies = New System.Windows.Forms.Button()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.txtPassword = New System.Windows.Forms.TextBox()
+        Me.txtUsername = New System.Windows.Forms.TextBox()
+        Me.cbAttack = New System.Windows.Forms.CheckBox()
+        Me.txtSteps = New System.Windows.Forms.TextBox()
+        Me.cbNotify = New System.Windows.Forms.CheckBox()
+        Me.cbBuff = New System.Windows.Forms.CheckBox()
+        Me.txtStamina = New System.Windows.Forms.TextBox()
+        Me.cbChamp = New System.Windows.Forms.CheckBox()
+        Me.cbExp = New System.Windows.Forms.CheckBox()
+        Me.txtWaitTime = New System.Windows.Forms.TextBox()
+        Me.txtInterval = New System.Windows.Forms.TextBox()
+        Me.cbShowResults = New System.Windows.Forms.CheckBox()
+        Me.lvEnemies = New System.Windows.Forms.ListView()
+        Me.EnemyName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Kills = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.SuspendLayout()
         '
         'wbrs
@@ -193,15 +195,6 @@ Partial Class FallenSword
         Me.Label6.TabIndex = 21
         Me.Label6.Text = "Lost Experience:"
         '
-        'lbEnemies
-        '
-        Me.lbEnemies.FormattingEnabled = True
-        Me.lbEnemies.Location = New System.Drawing.Point(842, 542)
-        Me.lbEnemies.Name = "lbEnemies"
-        Me.lbEnemies.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
-        Me.lbEnemies.Size = New System.Drawing.Size(115, 108)
-        Me.lbEnemies.TabIndex = 23
-        '
         'Label8
         '
         Me.Label8.AutoSize = True
@@ -229,20 +222,20 @@ Partial Class FallenSword
         Me.lblProgress.TabIndex = 30
         Me.lblProgress.Text = "Progress:"
         '
-        'ListView1
+        'lvBuffs
         '
-        Me.ListView1.Location = New System.Drawing.Point(0, 591)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(836, 126)
-        Me.ListView1.TabIndex = 24
-        Me.ListView1.UseCompatibleStateImageBehavior = False
+        Me.lvBuffs.Location = New System.Drawing.Point(0, 591)
+        Me.lvBuffs.Name = "lvBuffs"
+        Me.lvBuffs.Size = New System.Drawing.Size(836, 126)
+        Me.lvBuffs.TabIndex = 24
+        Me.lvBuffs.UseCompatibleStateImageBehavior = False
         '
         'btnSaveBuffs
         '
         Me.btnSaveBuffs.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(161, Byte))
         Me.btnSaveBuffs.Location = New System.Drawing.Point(842, 682)
         Me.btnSaveBuffs.Name = "btnSaveBuffs"
-        Me.btnSaveBuffs.Size = New System.Drawing.Size(115, 30)
+        Me.btnSaveBuffs.Size = New System.Drawing.Size(125, 30)
         Me.btnSaveBuffs.TabIndex = 25
         Me.btnSaveBuffs.Text = "Save Buffs"
         Me.btnSaveBuffs.UseVisualStyleBackColor = True
@@ -269,12 +262,12 @@ Partial Class FallenSword
         '
         Me.txtEnemy.Location = New System.Drawing.Point(842, 656)
         Me.txtEnemy.Name = "txtEnemy"
-        Me.txtEnemy.Size = New System.Drawing.Size(66, 20)
+        Me.txtEnemy.Size = New System.Drawing.Size(76, 20)
         Me.txtEnemy.TabIndex = 22
         '
         'btnAddEnemy
         '
-        Me.btnAddEnemy.Location = New System.Drawing.Point(914, 655)
+        Me.btnAddEnemy.Location = New System.Drawing.Point(924, 655)
         Me.btnAddEnemy.Name = "btnAddEnemy"
         Me.btnAddEnemy.Size = New System.Drawing.Size(43, 21)
         Me.btnAddEnemy.TabIndex = 23
@@ -285,7 +278,7 @@ Partial Class FallenSword
         '
         Me.btnClrEnemies.Location = New System.Drawing.Point(842, 507)
         Me.btnClrEnemies.Name = "btnClrEnemies"
-        Me.btnClrEnemies.Size = New System.Drawing.Size(115, 34)
+        Me.btnClrEnemies.Size = New System.Drawing.Size(125, 34)
         Me.btnClrEnemies.TabIndex = 21
         Me.btnClrEnemies.Text = "Enemies (click to clear):"
         Me.btnClrEnemies.UseVisualStyleBackColor = True
@@ -441,11 +434,40 @@ Partial Class FallenSword
         Me.cbShowResults.Text = "Show results?"
         Me.cbShowResults.UseVisualStyleBackColor = True
         '
+        'lvEnemies
+        '
+        Me.lvEnemies.AllowColumnReorder = True
+        Me.lvEnemies.AutoArrange = False
+        Me.lvEnemies.CheckBoxes = True
+        Me.lvEnemies.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.EnemyName, Me.Kills})
+        Me.lvEnemies.FullRowSelect = True
+        Me.lvEnemies.GridLines = True
+        Me.lvEnemies.LabelEdit = True
+        Me.lvEnemies.Location = New System.Drawing.Point(843, 548)
+        Me.lvEnemies.Name = "lvEnemies"
+        Me.lvEnemies.Size = New System.Drawing.Size(124, 97)
+        Me.lvEnemies.Sorting = System.Windows.Forms.SortOrder.Ascending
+        Me.lvEnemies.TabIndex = 45
+        Me.lvEnemies.UseCompatibleStateImageBehavior = False
+        Me.lvEnemies.View = System.Windows.Forms.View.Details
+        '
+        'EnemyName
+        '
+        Me.EnemyName.Text = "Name"
+        Me.EnemyName.Width = 86
+        '
+        'Kills
+        '
+        Me.Kills.Text = "#"
+        Me.Kills.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.Kills.Width = 23
+        '
         'FallenSword
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(963, 717)
+        Me.ClientSize = New System.Drawing.Size(974, 717)
+        Me.Controls.Add(Me.lvEnemies)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.txtPassword)
@@ -459,13 +481,12 @@ Partial Class FallenSword
         Me.Controls.Add(Me.txtSteps)
         Me.Controls.Add(Me.cbNotify)
         Me.Controls.Add(Me.btnSaveBuffs)
-        Me.Controls.Add(Me.ListView1)
+        Me.Controls.Add(Me.lvBuffs)
         Me.Controls.Add(Me.lblProgress)
         Me.Controls.Add(Me.cbBuff)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.txtStamina)
-        Me.Controls.Add(Me.lbEnemies)
         Me.Controls.Add(Me.cbChamp)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.lbLostExp)
@@ -511,13 +532,12 @@ Partial Class FallenSword
     Friend WithEvents lbLostExp As System.Windows.Forms.ListBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents cbChamp As System.Windows.Forms.CheckBox
-    Friend WithEvents lbEnemies As System.Windows.Forms.ListBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents txtStamina As System.Windows.Forms.TextBox
     Friend WithEvents cbBuff As System.Windows.Forms.CheckBox
     Friend WithEvents lblProgress As System.Windows.Forms.Label
-    Friend WithEvents ListView1 As System.Windows.Forms.ListView
+    Friend WithEvents lvBuffs As System.Windows.Forms.ListView
     Friend WithEvents btnSaveBuffs As System.Windows.Forms.Button
     Friend WithEvents cbNotify As System.Windows.Forms.CheckBox
     Friend WithEvents txtSteps As System.Windows.Forms.TextBox
@@ -531,4 +551,7 @@ Partial Class FallenSword
     Friend WithEvents txtPassword As System.Windows.Forms.TextBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents lvEnemies As System.Windows.Forms.ListView
+    Friend WithEvents EnemyName As System.Windows.Forms.ColumnHeader
+    Friend WithEvents Kills As System.Windows.Forms.ColumnHeader
 End Class
